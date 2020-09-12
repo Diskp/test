@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" type="text/javascript"  charset="utf-8"></script>
+</head>
+w
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in city">
+                city:{{item}}
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: "#app",
+            data: {
+                city: ['北京', '上海', '深圳', '广州']
+            }
+        });
+    </script>
+</body>
+
+</html>

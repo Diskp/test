@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" type="text/javascript"  charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2 v-text="content"></h2>
+        <h2 v-html="content"></h2>
+        <input type="button" value="弹窗" v-on:click="click">
+        <input type="button" value="双击" v-on:dblclick="click">
+        <input type="button" value="食物增加" v-on:click="add">
+        <input type="button" value="食物减少" v-on:click="reduce">
+        <h2>{{food}}</h2>
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                food: "蔬菜",
+                message: 'hello!',
+                content: "<a href='http://www.baidu.com'>百度</a>"
+            },
+            methods: {
+                click: function() {
+                    alert("弹窗");
+                },
+                add: function() {
+                    this.food += "好多"
+                },
+                reduce: function() {
+                    this.food = this.food.substr(0,1);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

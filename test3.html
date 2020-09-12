@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js" type="text/javascript"  charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2 v-show="isShowH1">h1</h2>
+        <button v-on:click="show1">show1</button>
+        <h2 v-show="isShowH2">h2</h2>
+        <button v-on:click="show2">show2</button>
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: "#app",
+            data: {
+                isShowH1: true,
+                isShowH2: true
+            },
+            methods: {
+                show1: function() {
+                    this.isShowH1 = true;
+                    this.isShowH2 = !this.isShowH1;
+                },
+                show2: function() {
+                    this.isShowH2 = true;
+                    this.isShowH1 = !this.isShowH2;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
